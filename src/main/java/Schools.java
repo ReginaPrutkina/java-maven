@@ -5,29 +5,26 @@ import javax.persistence.*;
 public class Schools {
     @Id
     public int schoolNumber;
-
-    public String schoolAddress;
-    @Id
     @Column
-    public int district_id;
+    public String schoolAddress;
 
     @ManyToOne
-    @JoinColumn(name = "parent_id")
-    private Parent parent;
+    @JoinColumn(name = "districtID")
+    private District district;
 
     public Schools(){};
-    public Schools(int schoolNumber, int district_id, String schoolAddress){
+    public Schools(int schoolNumber, District district, String schoolAddress){
         this.schoolNumber = schoolNumber;
-        this.schoolAddress = schoolAddress;
-        this.district_id = district_id;
+        this.schoolAddress = district.getDistrictName()+ " " + schoolAddress;
+        this.district = district;
     }
 
-    public void setDistrict_id(int district_id) {
-        this.district_id = district_id;
+    public void setDistrict(District district) {
+        this.district = district;
     }
 
-    public int getDistrict_id() {
-        return district_id;
+    public District getDistrict() {
+        return district;
     }
 
     public void setSchoolAddress(String schoolAddress) {
@@ -46,19 +43,10 @@ public class Schools {
         return schoolNumber;
     }
 
-    public Parent getParent() {
-        return parent;
-    }
-
-    public void setParent(Parent parent) {
-        this.parent = parent;
-    }
-
-    @Override
+   @Override
     public String toString() {
         return "Schools{" +
                 "schoolNumber=" + schoolNumber +
-                ", district_id=" + district_id +
                 ", schoolAddress='" + schoolAddress + '\'' +
                 '}';
     }

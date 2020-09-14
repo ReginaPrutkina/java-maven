@@ -2,7 +2,7 @@ public class Main {
     public static void main(String[] args) {
 
         ParentDAO parentDAO = new ParentDAO();
-        Parent parent = new Parent("Parent 2", 1);
+        Parent parent = new Parent("Parent 1", 1);
         parentDAO.save(parent);
         Child child = new Child("Child 2_1");
         parent.addChild(child);

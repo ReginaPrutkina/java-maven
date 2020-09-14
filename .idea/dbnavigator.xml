@@ -31,7 +31,11 @@
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="dc703701-f890-4f58-b904-3e0ffb575eac">
-      <console name="Connection" type="STANDARD" schema="testdb" session="Main"><![CDATA[select * from children]]></console>
+      <console name="Connection" type="STANDARD" schema="testdb" session="Main"><![CDATA[create table testdb.schools(
+schoolAddress varchar(128),
+schoolNumber int(5) not null,
+primary key(schoolNumber)
+)]]></console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">

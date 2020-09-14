@@ -12,18 +12,16 @@ public class Parent implements Serializable {
     private int id;
     @Column (name = "FIO")
     private  String fio;
-    @Column
-    private int district_id;
+    @Column (name = "district_id")
+    private int districtId;
     @OneToMany(mappedBy = "parent",cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<Child> children = new HashSet<Child>();
- //   @OneToMany(mappedBy = "parents",cascade = CascadeType.ALL)
-    @Transient
-    private Set<Schools> schools = new HashSet<Schools>();
+
 
     Parent(){};
-    Parent(String fio,int district_id){
+    Parent(String fio,int districtId){
         this.fio = fio;
-        this.district_id = district_id;
+        this.districtId = districtId;
     }
 
     public Set<Child> getChildren() {
@@ -43,12 +41,12 @@ public class Parent implements Serializable {
         this.fio = fio;
     }
 
-    public int getDistrict_id(){
-        return district_id;
+    public int getDistrictId(){
+        return districtId;
     }
 
-    public void setDistrict_id(int district_id) {
-        this.district_id = district_id;
+    public void setDistrictId(int districtId) {
+        this.districtId = districtId;
     }
 
     public void addChild(Child child) {
@@ -66,23 +64,14 @@ public class Parent implements Serializable {
         children.add(child);
     }
 
-    public Set<Schools> getSchools() {
-        return schools;
-    }
 
-    public void showSchools(){
-        System.out.println("Список школ в Вашем районе");
-        for (Schools school:schools  ) {
-            System.out.println(school);
-        }
-    }
 
     @Override
     public String toString() {
         return "Parent{" +
                 "id=" + id +
                 ", FIO='" + fio + '\'' +
-                ", district_id=" + district_id +
+                ", district_id=" + districtId +
 
                 '}';
     }
