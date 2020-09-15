@@ -1,14 +1,19 @@
+package com.example;
+
 import javax.persistence.*;
 
 @Entity
 @Table (name = "children")
 public class Child {
     private int id;
+
     private String FIO;
+
     private int schoolNumber;
+
     private Parent parent;
-    Child(){};
-   Child(String FIO){
+    public Child(){};
+   public Child(String FIO){
     this.FIO = FIO;
 
    }
@@ -53,7 +58,7 @@ public class Child {
 
     @Override
     public String toString() {
-        return "Child{" +
+        return "com.example.Child{" +
                 "id=" + id +
                 ", FIO='" + FIO + '\'' +
                 ", schoolID=" + schoolNumber +

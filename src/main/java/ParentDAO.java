@@ -1,3 +1,5 @@
+import com.example.Child;
+import com.example.Parent;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 

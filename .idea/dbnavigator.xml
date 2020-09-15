@@ -31,26 +31,30 @@
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="dc703701-f890-4f58-b904-3e0ffb575eac">
-      <console name="Connection" type="STANDARD" schema="testdb" session="Main"><![CDATA[create table testdb.schools(
-schoolAddress varchar(128),
-schoolNumber int(5) not null,
-primary key(schoolNumber)
-)]]></console>
+      <console name="Connection" type="STANDARD" schema="testdb" session="Main"><![CDATA[select * from schools]]></console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
-    <open-files />
+    <open-files>
+      <object connection-id="dc703701-f890-4f58-b904-3e0ffb575eac" object-ref="schemas/testdb/tables/districts" />
+    </open-files>
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
     <connection id="dc703701-f890-4f58-b904-3e0ffb575eac" />
   </component>
   <component name="DBNavigator.Project.DatasetFilterManager">
+    <filter-actions connection-id="dc703701-f890-4f58-b904-3e0ffb575eac" dataset="testdb.schools" active-filter-id="884a1c18-8889-4f5d-93f1-73df560d1475">
+      <filter id="884a1c18-8889-4f5d-93f1-73df560d1475" name="Filter 1" temporary="false" custom-name="false" type="basic" join-type="AND" />
+    </filter-actions>
     <filter-actions connection-id="dc703701-f890-4f58-b904-3e0ffb575eac" dataset="testdb.parents" active-filter-id="e89626e7-fb97-4816-a769-c59fe0d15d73">
       <filter id="97fca98e-81af-41f4-b3b3-c83e061270a7" name="Filter" temporary="false" custom-name="false" type="basic" join-type="AND" />
       <filter id="e89626e7-fb97-4816-a769-c59fe0d15d73" name="Filter 2" temporary="false" custom-name="false" type="basic" join-type="AND" />
     </filter-actions>
     <filter-actions connection-id="dc703701-f890-4f58-b904-3e0ffb575eac" dataset="testdb.tbl1" active-filter-id="08e10755-3caf-42eb-834a-5fa4470db600">
       <filter id="08e10755-3caf-42eb-834a-5fa4470db600" name="Filter" temporary="false" custom-name="false" type="basic" join-type="AND" />
+    </filter-actions>
+    <filter-actions connection-id="dc703701-f890-4f58-b904-3e0ffb575eac" dataset="testdb.districts" active-filter-id="EMPTY_FILTER">
+      <filter id="63a70467-77d5-45ec-bae7-bfc560cc57f3" name="Filter 1" temporary="false" custom-name="false" type="basic" join-type="AND" />
     </filter-actions>
     <filter-actions connection-id="dc703701-f890-4f58-b904-3e0ffb575eac" dataset="testdb.children" active-filter-id="4534ddd4-dd88-46ba-a3ec-78b07cbddd5f">
       <filter id="4534ddd4-dd88-46ba-a3ec-78b07cbddd5f" name="Filter 1" temporary="false" custom-name="false" type="basic" join-type="AND" />
@@ -75,7 +79,9 @@ primary key(schoolNumber)
     <filters />
   </component>
   <component name="DBNavigator.Project.ScriptExecutionManager" clear-outputs="true">
-    <recently-used-interfaces />
+    <recently-used-interfaces>
+      <mapping database-type="MYSQL" interface-id="DEFAULT" />
+    </recently-used-interfaces>
   </component>
   <component name="DBNavigator.Project.Settings">
     <connections>

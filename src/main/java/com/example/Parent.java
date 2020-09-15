@@ -1,3 +1,5 @@
+package com.example;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.HashSet;
@@ -12,16 +14,16 @@ public class Parent implements Serializable {
     private int id;
     @Column (name = "FIO")
     private  String fio;
-    @Column (name = "district_id")
-    private int districtId;
+    @Column
+    private String street;
     @OneToMany(mappedBy = "parent",cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<Child> children = new HashSet<Child>();
 
 
-    Parent(){};
-    Parent(String fio,int districtId){
+    public Parent(){};
+   public Parent(String fio,String street){
         this.fio = fio;
-        this.districtId = districtId;
+        this.street = street;
     }
 
     public Set<Child> getChildren() {
@@ -41,12 +43,12 @@ public class Parent implements Serializable {
         this.fio = fio;
     }
 
-    public int getDistrictId(){
-        return districtId;
+    public void setStreet(String street) {
+        this.street = street;
     }
 
-    public void setDistrictId(int districtId) {
-        this.districtId = districtId;
+    public String getStreet() {
+        return street;
     }
 
     public void addChild(Child child) {
@@ -68,10 +70,10 @@ public class Parent implements Serializable {
 
     @Override
     public String toString() {
-        return "Parent{" +
+        return "com.example.Parent{" +
                 "id=" + id +
                 ", FIO='" + fio + '\'' +
-                ", district_id=" + districtId +
+                ", street=" + street +
 
                 '}';
     }

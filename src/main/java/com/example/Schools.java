@@ -1,3 +1,7 @@
+package com.example;
+
+import com.example.District;
+
 import javax.persistence.*;
 
 @Entity
@@ -7,24 +11,22 @@ public class Schools {
     public int schoolNumber;
     @Column
     public String schoolAddress;
-
-    @ManyToOne
-    @JoinColumn(name = "districtID")
-    private District district;
+    @Column (name = "district_id")
+    private int districtId;
 
     public Schools(){};
-    public Schools(int schoolNumber, District district, String schoolAddress){
+    public Schools(int schoolNumber, int districtId, String schoolAddress){
         this.schoolNumber = schoolNumber;
-        this.schoolAddress = district.getDistrictName()+ " " + schoolAddress;
-        this.district = district;
+        this.schoolAddress = schoolAddress;
+        this.districtId = districtId;
     }
 
-    public void setDistrict(District district) {
-        this.district = district;
+    public void setDistrictId(int districtId) {
+        this.districtId = districtId;
     }
 
-    public District getDistrict() {
-        return district;
+    public int getDistrictId() {
+        return districtId;
     }
 
     public void setSchoolAddress(String schoolAddress) {
@@ -45,9 +47,8 @@ public class Schools {
 
    @Override
     public String toString() {
-        return "Schools{" +
-                "schoolNumber=" + schoolNumber +
-                ", schoolAddress='" + schoolAddress + '\'' +
-                '}';
+        return "schoolNumber=" + schoolNumber +
+                ", schoolAddress='" + schoolAddress + '\'' ;
+
     }
 }

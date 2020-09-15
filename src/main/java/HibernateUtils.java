@@ -6,8 +6,8 @@ public class HibernateUtils {
     static {
     try{
                 Configuration configuration = new Configuration().configure();
-              //  configuration.addAnnotatedClass(Parent.class);
-              //  configuration.addAnnotatedClass(Child.class);
+              //  configuration.addAnnotatedClass(com.example.Parent.class);
+              //  configuration.addAnnotatedClass(com.example.Child.class);
                  sessionFactory = configuration.buildSessionFactory();
 
             } catch (Exception e) {
