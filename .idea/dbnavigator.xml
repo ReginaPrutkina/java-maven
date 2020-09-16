@@ -25,7 +25,7 @@
     <show-object-properties value="true" />
     <loaded-nodes>
       <connection connection-id="dc703701-f890-4f58-b904-3e0ffb575eac">
-        <schema name="testdb" object-types="view, index, procedure, table, function, dataset trigger, column, constraint" />
+        <schema name="testdb" object-types="view, table" />
       </connection>
     </loaded-nodes>
   </component>
@@ -35,9 +35,7 @@
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
-    <open-files>
-      <object connection-id="dc703701-f890-4f58-b904-3e0ffb575eac" object-ref="schemas/testdb/tables/districts" />
-    </open-files>
+    <open-files />
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
     <connection id="dc703701-f890-4f58-b904-3e0ffb575eac" />
