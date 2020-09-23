@@ -16,7 +16,8 @@ public class Main {
                         field.getName().substring(1);
                 Method method = cTest.getMethod(methodName);
                 if (myAnnotation.rounded2()) {
-                    System.out.println((double) ((int)((double)method.invoke(testClass)*100))/100);
+                   // System.out.println((double) ((int)((double)method.invoke(testClass)*100))/100);
+                    System.out.printf("%.2f%n",(double)method.invoke(testClass));
 
                 }
                 else System.out.println(method.invoke(testClass));

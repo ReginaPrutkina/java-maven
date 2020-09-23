@@ -21,7 +21,7 @@ public class Main {
             System.out.println(" Запись ребенка в школу возможна только по месту проживания родителя.");
             System.exit(1);
         }
-
+        parentDAO.save(parent);
         while (true) {
             child = new Child();
             System.out.println("Введите имя ребенка:");
@@ -29,10 +29,13 @@ public class Main {
             System.out.println("Школы в Вашем районе:");
             showSchools(district.getDistrictId());
             parent.addChild(child);
+            parentDAO.update(parent);
             System.out.println("Продолжить запись Ваших детей? Да - 1, Нет - 0");
             if (!scanner.nextLine().equals("1")) break;
         }
-        parentDAO.save(parent);
+        //Если нет ни одного ребенка, удаляем родителя из базы
+        if (parent.getChildren().size()==0)
+            parentDAO.delete(parent);
         //показать всех родителей и детей из БД
         showAll(parentDAO);
 
