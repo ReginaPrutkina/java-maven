@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id = "User1" class="com.springTest.UserSber" autowire="byType">
+        <property name="fio" value="Ivan"/>
+        <property name="age" value="36"/>
+        <property name="address" value="Екатеринбург, ул. Ленина, д 55"/>
+    </bean>
+
+    <bean id = "JobVTB" class="com.springTest.Job" autowire-candidate="false">
+        <property name = "companyName" value="VTB"/>
+
+    </bean>
+
+    <bean id = "JobSber" class="com.springTest.childJob" autowire-candidate="true">
+        <property name = "companyName" value="Sber"/>
+        <property name="addField" value="newSber"/>
+    </bean>
+
+</beans>
