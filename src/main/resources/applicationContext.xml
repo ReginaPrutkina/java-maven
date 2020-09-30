@@ -20,4 +20,7 @@
         <property name="addField" value="newSber"/>
     </bean>
 
+    <bean id = "RandomParam" class="com.springannotations.RandomParamClass"/>
+    <bean id = "RABeanPostProcessor" class="com.springannotations.RandomParamAnnotationBeanPostProcessor"/>
+
 </beans>
